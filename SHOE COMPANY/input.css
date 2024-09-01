@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.abc {
+    animation-name:move;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    position:relative;
+    animation-fill-mode:forwards;
+    
+}
+
+
+@keyframes move {
+ from{left:250px}
+ to{left:0px}
+}
+
