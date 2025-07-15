@@ -5,13 +5,21 @@
 
 h1{
     text-align:center;
+    color:#e1fc11;
+    color:#e5e5e5;
+    color:blanchedalmond;
 }
 
 body{
     display: flex;
     align-items:center;
     justify-content:center;
-    background-color:lightcoral;
+    background-image:url("bg.jpg");
+    background-size:cover;
+}
+
+.box:hover{
+    background-color: #e5e5e5aa;
 }
 
 #outerBox{
@@ -24,15 +32,18 @@ body{
     
 }
 
+
+
 .box{
     height : 150px;
     width : 150px;
-    background-color: aqua;
+    background-color: #e5e5e5;
     border : 2px solid black;
     border-radius: 15px;
     font-size:100px;
     text-align:center;
     color:black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .container{

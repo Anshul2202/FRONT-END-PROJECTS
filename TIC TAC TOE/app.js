@@ -6,17 +6,20 @@ let reset = document.querySelector("#reset");
 
 let turn = true;
 
+
 for(let i of boxes){
     i.addEventListener("click" , () => {
         if(turn === true){
             i.innerText = "X";
             turn = false;
             i.disabled = true;
+            i.style.backgroundColor = "rgba(27, 202, 250 , 0.7)"
             checkWinner();
         } else if(turn === false){
             i.innerText = "O";
             turn = true;
             i.disabled = true;
+            i.style.backgroundColor = "rgba(138, 247, 54 , 0.7)";
             checkWinner();
         }
     })
@@ -31,9 +34,16 @@ function vanish(){
     }
 }
 
+function color(){
+    for(let i of boxes){
+        i.style.backgroundColor = "#e5e5e5"
+    }
+}
+
 function NewGame(){
     turn = true;
     vanish();
+    color();
     display.classList.add("hide");
 }
 
@@ -63,10 +73,12 @@ function checkWinner (){
             console.log("winner is X");
             displayWinner("X");
             block();
+  
         } else if(val1 === "O" && val2 ==="O" && val3 === "O"){
             console.log("winner is O");
             displayWinner("O");
             block();
+
         }
 
     }
