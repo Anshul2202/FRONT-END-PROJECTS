@@ -1,18 +1,17 @@
-<html>
-    <head>
-
-        <title>TIC TAC TOE GAME</title>
-        <link rel="stylesheet" href="D:\PROJECTS\TIC TAC TOE\style.css">
-
-    </head>
-
-    
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
-
-    <h1>TIC-TAC-TOE GAME</h1>
-
-
-     <div class="bigBox">
+    <div id="outerBox">
+      <div class="display hide">
+        <p id="msg">Winner</p>
+        <button id="newBtn">New Game</button>
+      </div>
+      <h1>TIC-TAC-TOE</h1>
       <div class="container">
         <button class="box"></button>
         <button class="box"></button>
@@ -24,12 +23,9 @@
         <button class="box"></button>
         <button class="box"></button>
       </div>
-      <div id="display"></div>
-    </div>
-    
-    
-    <button id="reset-btn">RESET</button>
 
-   <script src="D:\PROJECTS\TIC TAC TOE\app.js"></script> 
-  </body>  
+      <button id="reset">RESET</button>
+    </div>
+  </body>
+  <script src="app.js"></script>
 </html>
