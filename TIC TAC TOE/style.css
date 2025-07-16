@@ -47,8 +47,8 @@ body{
 }
 
 .container{
-    height: 490px;
-    width: 490px;
+    height: 470px;
+    width: 470px;
     display: flex;
     align-items:center;
     justify-content:center;
@@ -87,4 +87,59 @@ body{
 
 .hide{
     display:none;
+}
+
+@media (max-width:1000px){
+    .box{
+        height:120px;
+        width:120px;
+    }
+
+    .container{
+        height:380px;
+        width:380px;
+    }
+}
+
+@media (max-width:650px){
+    .box{
+        height:80px;
+        width:80px;
+    }
+
+    .container{
+        height:250px;
+        width:250px;
+    }
+
+    #outerBox{
+        width:350px;
+    }
+}
+
+@media (max-width:400px){
+    .box{
+        height:60px;
+        width:60px;
+    }
+
+    .container{
+        height:190px;
+        width:200px;
+        gap:1px;
+    }
+
+    #outerBox{
+        width:280px;
+    }
+
+    h1{
+        font-size:25px;
+    }
+
+    #reset{
+        font-size:15px;
+        height:40px;
+        width:100px;
+    }
 }
