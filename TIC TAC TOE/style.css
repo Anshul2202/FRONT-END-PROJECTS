@@ -93,6 +93,7 @@ body{
     .box{
         height:120px;
         width:120px;
+        font-size:80px;
     }
 
     .container{
@@ -105,6 +106,7 @@ body{
     .box{
         height:80px;
         width:80px;
+        font-size:50px;
     }
 
     .container{
@@ -121,6 +123,7 @@ body{
     .box{
         height:60px;
         width:60px;
+        font-size:35px;
     }
 
     .container{
