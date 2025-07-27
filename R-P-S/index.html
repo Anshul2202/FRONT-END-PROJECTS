@@ -5,22 +5,28 @@
   </head>
 
   <body>
-    <h1>ROCK-PAPER-SCISSORS</h1>
-
-    <div class="display">
-      <div id="msgContainer">
-        <p id="msg1">User Wins!</p>
+    <div class="outerContainer">
+      <div class="display">
+        <div id="msgContainer">
+          <p id="msg1">User Wins!</p>
+        </div>
       </div>
-    </div>
-    <div id="container">
-      <div class="options" id="rock"></div>
-      <div class="options" id="paper"></div>
-      <div class="options" id="scissors"></div>
-      <p id="user" class="scoreBoard">USER SCORE = 0</p>
-      <p id="comp" class="scoreBoard">COMP SCORE = 0</p>
-      <p id="draw" class="scoreBoard">DRAW = 0</p>
 
-      <button id="rst">RESTART</button>
+      <div id="container">
+        <h1>ROCK-PAPER-SCISSORS</h1>
+        <div id="buttonContainer">
+          <div class="options" id="rock"></div>
+          <div class="options" id="paper"></div>
+          <div class="options" id="scissors"></div>
+        </div>
+        <div id="bigBoard">
+          <p id="user" class="scoreBoard">USER SCORE = 0</p>
+          <p id="comp" class="scoreBoard">COMP SCORE = 0</p>
+          <p id="draw" class="scoreBoard">DRAW = 0</p>
+        </div>
+
+        <button id="rst">RESTART</button>
+      </div>
     </div>
 
     <script src="first.js"></script>
