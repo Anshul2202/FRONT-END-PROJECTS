@@ -16,7 +16,7 @@ function updateUserScore(){
 }
 
 function updateCompScore(){
-        compScore.innerText = `USER SCORE = ${compSrc}`;
+        compScore.innerText = `COMP SCORE = ${compSrc}`;
 }
 
 function compPlay(){
