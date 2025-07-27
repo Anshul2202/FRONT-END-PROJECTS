@@ -5,8 +5,10 @@
 }
 
 body{
-    background-color:cornsilk;
+    background-image:url("bgForR-P-S.jpg");
+    background-size:contain;
 }
+
 
 .options{
     height:150px;
@@ -25,11 +27,10 @@ body{
 }
 
 
-#rock:hover{
+.options:hover{
     cursor:pointer;
-    opacity:0.5;
+    border:3px solid cornsilk;
 }
-
 
 #paper{
     background-image: url("IMAGES/paper.png");
@@ -38,20 +39,10 @@ body{
     margin-right:20px;
 }
 
-#paper:hover{
-    cursor:pointer;
-    opacity:0.5;
-}
-
 #scissors{
     background-image: url("IMAGES/scissors.png");
     background-size:cover;
     background-position-x: -57px;
-}
-
-#scissors:hover{
-    cursor:pointer;
-    opacity:0.5;
 }
 
 
@@ -70,10 +61,13 @@ h1{
     position:absolute;
     top:200px;
     left:520px;
+    color:cornSilk;
 }
 
 #rst{
     position:relative;
+    background-color:bisque;
+    color:darkcyan;
     left:150px;
     top:100px;
     height:60px;
@@ -85,43 +79,40 @@ h1{
 
 #rst:hover{
     background-color:bisque;
-    border:4px solid black;
+    border:4px solid darkcyan;
 }
 
 
-#user{
+.scoreBoard{
     position:relative;
     top:60px;
     left:10px;
-    border:2px solid black;
+    border:2px solid bisque;
+    color:cornsilk;
     height:15px;
     padding:15px;
     padding-bottom:20px;
     border-radius:10px;
     font-weight:600;
+    margin-right:20px;
+}
+
+#msg1{
+    border-radius:15px;
+    display: inline;
+    padding:10px;
+
+}
+
+#msgContainer{
+    text-align:center;
+    font-size:40px;
+    position:relative;
+    top:100px;
+
 }
 
 
-#comp{
-    position:relative;
-    top:60px;
-    left:15px;
-    padding:15px;
-    padding-bottom:20px;
-    height:15px;
-    border:2px solid black;
-    border-radius:10px;
-    font-weight:600;
-}
-
-#draw{
-    position:relative;
-    top:60px;
-    left:20px;
-    padding:15px;
-    padding-bottom:20px;
-    height:15px;
-    border:2px solid black;
-    border-radius:10px;
-    font-weight:600;
+.display{
+    display:none;
 }
