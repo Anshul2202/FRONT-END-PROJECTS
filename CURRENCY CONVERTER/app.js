@@ -1,119 +1,80 @@
-let dropDown1 = document.querySelector(".dropDown1");
+let dropDown = document.querySelectorAll("select");
+let a = true;
+let flag1 = document.querySelector("#flag1");
+let flag2 = document.querySelector("#flag2");
+let btn = document.querySelector("button");
+let inputTab = document.querySelector("input");
+let displayRes = document.querySelector("#result");
 
-let flag1 = document.querySelector(".flag1");
-
-let code1;
-
-for(let i in countryList){
-    let opt1 = document.createElement("option");
-    dropDown1.append(opt1);
-    opt1.innerText = i;
-    opt1.classList.add(i);
-
-    let abc = document.querySelector(".USD");
-
-    if(abc){
-        if(abc.innerText =="USD"){
-            abc.selected ="selected";
-        }
-    }
-
-    dropDown1.addEventListener("change" , (i) => {
-        changeFlag1(i.target.value);
-        code1 = i.target.value;
-    })
-
-}
+let opt1 = document.querySelector("#option1");
+let opt2 = document.querySelector("#option2");
 
 
-function changeFlag1(i) {
-    let countryCode = countryList[i];
-    let newSrc =`https://flagsapi.com/${countryCode}/flat/64.png`;
-    flag1.src = newSrc;
-}    
+let exchangeRate;
+let baseUrl = "https://v6.exchangerate-api.com/v6/b6f03a9cd9190ab773d62722/latest/USD";
 
-//------------------------2ND DROPDOWN----------------------//
+(async function (){
+    let data = await fetch(baseUrl);
+    let realData = await data.json();
 
-
-let dropDown2 = document.querySelector(".dropDown2");
-
-let code2;
-for(let i in countryList){
-    let opt2 = document.createElement("option");
-    dropDown2.append(opt2);
-    opt2.innerText= i;
-    opt2.classList.add(`${i}2`);
-
-    let xyz = document.querySelector(".INR2");
-
-    if(xyz){
-        if(xyz.innerText == "INR"){
-            xyz.selected = "selected";
-        }
-    }
-
-
-    dropDown2.addEventListener("change" , (i) => {
-        
-        changeFlag2(i.target.value);
-        code2 = i.target.value;
-        
-        })
-  
-    
-}
-
-let flag2 = document.querySelector(".flag2");
-
-
-function changeFlag2 (i) {
-    let countryCode = countryList[i];
-
-    newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
-
-    flag2.src = newSrc;
-}
-
-
-
-
-let url = "https://v6.exchangerate-api.com/v6/b6f03a9cd9190ab773d62722/latest/USD";
-
-let allCodes;
-(async function ()  {
-    let exchange =await fetch(url);
-
-    let abc = await exchange.json();
-
-    allCodes = abc.conversion_rates;
-
+    exchangeRate = realData.conversion_rates;
 }) ();
 
 
+for (let i in countryList){
+    for(let j of dropDown){
+        let newOption = document.createElement("option");
+        newOption.innerText = i;
+        if(i == "USD" && a == true){
+            newOption.selected = "selected";
+            a = false;
+        } else if(i == "INR" && a == true){
+            newOption.selected = "selected";
+        }
+        j.append(newOption);
 
-let btn = document.querySelector("#btn");
+    }
+}
 
-btn.addEventListener("click" , (i) => {
-    i.preventDefault();
-    changeRate();
+
+for(let i of dropDown){
+    i.addEventListener("change" , (evt ) => {
+        let imgTag = i.parentElement.parentElement.children[0];
+
+        changeFlag(countryList[evt.target.value] , imgTag);
+
+    })
+}
+
+
+
+function changeFlag(id , tag){
+    tag.setAttribute("src" , `https://flagsapi.com/${id}/flat/64.png` );
+}
+
+
+
+let val1 = "USD" ;
+let val2 = "INR";
+opt1.addEventListener("change" , (evt) => {
+    val1 = evt.target.value;
 })
 
+opt2.addEventListener("change" , (evt) => {
+    val2 = evt.target.value;
 
-let inputBar = document.querySelector("#amount");
+})
 
-let result = document.querySelector("#result");
+let exVal1 , exVal2 , inputVal , finalVal;
 
-function abc () {
-    console.log(inputBar.value);
-}
+btn.addEventListener("click" , () => {
 
+    exVal1 = exchangeRate[val1];
+    exVal2 = exchangeRate[val2];
+    inputVal = inputTab.value;
+    
+    finalVal = (exVal2 / exVal1) * inputVal;
+    displayRes.innerText = `${inputVal}${val1} = ${finalVal}${val2}`;
 
-function changeRate () {
-    let firstRate = allCodes[code1];
-    let secondRate = allCodes[code2];
+})
 
-    let halfResult = inputBar.value / firstRate;
-    let finalResult = halfResult * secondRate;
-
-    result.innerText = `${inputBar.value} ${code1} = ${finalResult} ${code2}`;
-}

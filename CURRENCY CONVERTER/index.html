@@ -1,43 +1,57 @@
 <html>
-    <head>
-        <title>CURRENCY CONVERTER</title>
-        <link rel="stylesheet" href="D:\PROJECTS\CURRENCY CONVERTER\style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    </head>
+  <head>
+    <title>Currency Converter</title>
 
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
   <body>
-    <form id="container">
-        <h2>CURRENCY CONVERTER</h2>
-        <div id="inputBar">
-            <p>Enter The Amount</p>
-            <input type="text" value="1" id="amount">
+    <div class="practice"></div>
+    <div class="outerContainer">
+      <div class="container">
+        <h1>CURRENCY CONVERTER</h1>
+
+        <div>
+          <input type="text" value="1" />
         </div>
-        <div id="container2">
-           <div class="selector">
-              <p>FROM</p>
-              <img class="flag1" src="https://flagsapi.com/US/flat/64.png">
-              <select class="dropDown1">
-                  
+
+        <div class="flagContainer">
+          <div>
+            <img id="flag1" src="https://flagsapi.com/US/flat/64.png" />
+            <div>
+              <select id="option1">
+                <option></option>
               </select>
-           </div>
-           <i class="fa-solid fa-arrow-right-arrow-left"></i>
-           <div class="selector">
-              <p>TO</p>
-              <img class="flag2" src="https://flagsapi.com/IN/flat/64.png">
-              <select class = "dropDown2">
-                  
+            </div>
+          </div>
+
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+          <div>
+            <img id="flag2" src="https://flagsapi.com/IN/flat/64.png" />
+            <div>
+              <select id="option2">
+                <option></option>
               </select>
-          </div>    
+            </div>
+          </div>
         </div>
-        <p id="result">1 USD = 80 INR</p>
-        <button id = "btn">GET EXCHANGE RATE</button>
-    </form>
 
-    <script src="D:\PROJECTS\CURRENCY CONVERTER\code.js"></script>
-    <script src="D:\PROJECTS\CURRENCY CONVERTER\app.js"></script>
-    
-  </body>  
+        <div id="result"><p>1USD = 87.4243INR</p></div>
 
+        <div>
+          <button>GET EXCHANGE RATE</button>
+        </div>
+      </div>
+    </div>
 
+    <script src="code.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
